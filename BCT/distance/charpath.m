@@ -66,7 +66,7 @@ Dv = D(~isnan(D));                  % get non-NaN indices of D
 lambda     = mean(Dv);
 
 % Efficiency: mean of inverse entries of D(G)
-Dv(isinf(Dv)) = [];
+Dv(Dv == 0) = [];
 efficiency = mean(1./Dv);
 
 % Eccentricity for each vertex
